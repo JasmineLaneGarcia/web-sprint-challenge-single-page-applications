@@ -1,10 +1,19 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
+import PizzaForm from './PizzaForm'
 
 const HomePage = () => {
+    const history = useHistory()
+
+    const routeToOrder = () => {
+        history.push('/PizzaForm')
+}
+
     return (
         <div>
-            <Link to="/PizzaForm">Order Now!</Link>
+            <button onClick={routeToOrder} id="order-pizza">
+        Order now!
+      </button>
         </div>
     )
 }
